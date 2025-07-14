@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             lblnombre = new Label();
             lblcantidad = new Label();
             lblprecio = new Label();
@@ -35,15 +36,20 @@
             txtcantidad = new TextBox();
             txtprecio = new TextBox();
             dgvproductos = new DataGridView();
+            ctmproductos = new ContextMenuStrip(components);
+            eliminarFilaToolStripMenuItem = new ToolStripMenuItem();
             btnagregar = new Button();
             lbltotal = new Label();
+            errorProvider1 = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)dgvproductos).BeginInit();
+            ctmproductos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // lblnombre
             // 
             lblnombre.AutoSize = true;
-            lblnombre.Location = new Point(144, 54);
+            lblnombre.Location = new Point(144, 53);
             lblnombre.Name = "lblnombre";
             lblnombre.Size = new Size(64, 20);
             lblnombre.TabIndex = 0;
@@ -61,7 +67,7 @@
             // lblprecio
             // 
             lblprecio.AutoSize = true;
-            lblprecio.Location = new Point(148, 174);
+            lblprecio.Location = new Point(149, 173);
             lblprecio.Name = "lblprecio";
             lblprecio.Size = new Size(50, 20);
             lblprecio.TabIndex = 2;
@@ -76,26 +82,41 @@
             // 
             // txtcantidad
             // 
-            txtcantidad.Location = new Point(236, 110);
+            txtcantidad.Location = new Point(235, 109);
             txtcantidad.Name = "txtcantidad";
-            txtcantidad.Size = new Size(360, 27);
+            txtcantidad.Size = new Size(361, 27);
             txtcantidad.TabIndex = 4;
             // 
             // txtprecio
             // 
-            txtprecio.Location = new Point(236, 167);
+            txtprecio.Location = new Point(235, 167);
             txtprecio.Name = "txtprecio";
-            txtprecio.Size = new Size(360, 27);
+            txtprecio.Size = new Size(361, 27);
             txtprecio.TabIndex = 5;
             // 
             // dgvproductos
             // 
             dgvproductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvproductos.ContextMenuStrip = ctmproductos;
             dgvproductos.Location = new Point(88, 247);
             dgvproductos.Name = "dgvproductos";
             dgvproductos.RowHeadersWidth = 51;
             dgvproductos.Size = new Size(619, 225);
             dgvproductos.TabIndex = 6;
+            // 
+            // ctmproductos
+            // 
+            ctmproductos.ImageScalingSize = new Size(20, 20);
+            ctmproductos.Items.AddRange(new ToolStripItem[] { eliminarFilaToolStripMenuItem });
+            ctmproductos.Name = "ctmproductos";
+            ctmproductos.Size = new Size(211, 56);
+            // 
+            // eliminarFilaToolStripMenuItem
+            // 
+            eliminarFilaToolStripMenuItem.Name = "eliminarFilaToolStripMenuItem";
+            eliminarFilaToolStripMenuItem.Size = new Size(210, 24);
+            eliminarFilaToolStripMenuItem.Text = "Eliminar fila";
+            eliminarFilaToolStripMenuItem.Click += eliminarFilaToolStripMenuItem_Click;
             // 
             // btnagregar
             // 
@@ -116,6 +137,10 @@
             lbltotal.TabIndex = 8;
             lbltotal.Text = "total";
             // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -134,6 +159,8 @@
             Name = "Form1";
             Text = "Productos";
             ((System.ComponentModel.ISupportInitialize)dgvproductos).EndInit();
+            ctmproductos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -149,5 +176,8 @@
         private DataGridView dgvproductos;
         private Button btnagregar;
         private Label lbltotal;
+        private ErrorProvider errorProvider1;
+        private ContextMenuStrip ctmproductos;
+        private ToolStripMenuItem eliminarFilaToolStripMenuItem;
     }
 }
